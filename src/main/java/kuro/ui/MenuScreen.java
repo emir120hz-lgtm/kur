@@ -603,7 +603,7 @@ public final class MenuScreen extends Screen {
 
    private static int menuKeyCode() {
       String key = Kuro.menuKey.getBoundKeyTranslationKey();
-      return net.minecraft.InputUtil.fromTranslationKey(key).getCode();
+      return net.minecraft.client.util.InputUtil.fromTranslationKey(key).getCode();
    }
 
    private void drawHeader() {

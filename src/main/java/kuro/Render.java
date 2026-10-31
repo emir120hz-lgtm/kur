@@ -50,14 +50,14 @@ public class Render {
 
       if (Kuro.on[Kuro.STORAGE]) {
          RenderSystem.lineWidth(2.0F);
-         BufferBuilder b = Tessellator.getInstance().begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
+         BufferBuilder b = Tessellator.getInstance().begin(DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
          drawHits(b, m, Mods.storageHits.values(), cam, camLook, 65536.0, 1.0F);
          flush(b);
       }
 
       if (Kuro.on[Kuro.BLOCK]) {
          RenderSystem.lineWidth(Math.max(1.0F, Config.beThick));
-         BufferBuilder b = Tessellator.getInstance().begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
+         BufferBuilder b = Tessellator.getInstance().begin(DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
          double r = Config.beRange;
          drawHits(b, m, Mods.blockHits.values(), cam, camLook, r * r, Config.beAlpha / 100.0F);
          flush(b);
@@ -65,7 +65,7 @@ public class Render {
 
       if (Kuro.on[Kuro.PLAYER]) {
          RenderSystem.lineWidth(Math.max(1.0F, Config.peThick));
-         BufferBuilder b = Tessellator.getInstance().begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
+         BufferBuilder b = Tessellator.getInstance().begin(DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
          playerEsp(b, m, cam, camLook, td);
          flush(b);
       }
